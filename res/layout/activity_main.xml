@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/freq_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Hz"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="go"
+        android:text="@string/play" />
+
+    <EditText
+        android:id="@+id/base_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="base Note" />
+    <EditText
+        android:id="@+id/interval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="interval" />
+    
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="playInterval"
+        android:text="@string/play" />
+  <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15sp"
+            android:paddingRight="15sp" >
+
+            <RadioButton
+                android:id="@+id/radioSine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sine" />
+
+            <RadioButton
+                android:id="@+id/radioSquare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Square" />
+        </RadioGroup>
+    
+</LinearLayout>
