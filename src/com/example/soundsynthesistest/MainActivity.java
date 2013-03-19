@@ -26,7 +26,9 @@ public class MainActivity extends Activity {
 		mEditText = (EditText) findViewById(R.id.freq_value);
 		mEditText.setText("440");
 		mEditText2 = (EditText) findViewById(R.id.base_note);
+		mEditText2.setText("A4");
 		mIntervalEditText = (EditText) findViewById(R.id.interval);
+		mIntervalEditText.setText("10");
 		mRadioGroup = (RadioGroup) findViewById(R.id.radio_group);
 	}
 
