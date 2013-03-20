@@ -13,7 +13,11 @@ public class ToneGenerator {
 	private ScheduledExecutorService mExecutor;
 	
 	public static final int TYPE_SINE = 0;
-	public static final int TYPE_SQUARE = 1;
+	public static final int TYPE_TRIANGLE = 1;
+	public static final int TYPE_SAWTOOTH = 2;
+	public static final int TYPE_SQUARE = 3;
+
+
 	// private AudioTrack mAudioTrack;
 	private int wave_type;
 	private int duration; // in seconds
@@ -59,6 +63,7 @@ public class ToneGenerator {
 			switch (wave_type) {
 			case TYPE_SINE:
 				sample[i] = Math.sin(phase);
+				//sample[i] =( 2 * (phase/(Math.PI * 2))) - 1;
 				phase = phase + ((2 * Math.PI * freqOfTone) / sampleRate);
 				if (phase > (2 * Math.PI)) {
 					phase = phase - (2 * Math.PI);
@@ -75,7 +80,28 @@ public class ToneGenerator {
 					phase = phase - (2 * Math.PI);
 				}
 				break;
+			case TYPE_SAWTOOTH:
+				sample[i] =( 2 * (phase/(Math.PI * 2))) - 1;
+				phase = phase + ((2 * Math.PI * freqOfTone) / sampleRate);
+				if (phase > (2 * Math.PI)) {
+					phase = phase - (2 * Math.PI);
+				}
+				break;
+			case TYPE_TRIANGLE:
+				if (phase < Math.PI) {
+					sample[i] = ( 2 / Math.PI) * phase - 1;				
+				} else {
+					sample[i] = (-2 / Math.PI) * phase + 3;
+					
+				}
+
+				phase = phase + ((2 * Math.PI * freqOfTone) / sampleRate);
+				if (phase > (2 * Math.PI)) {
+					phase = phase - (2 * Math.PI);
+				}
+				break;
 			}
+			
 
 		}
 

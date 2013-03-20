@@ -22,36 +22,49 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="base Note" />
+
     <EditText
         android:id="@+id/interval"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="interval" />
-    
-    
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="playInterval"
         android:text="@string/play" />
-  <RadioGroup
-            android:id="@+id/radio_group"
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp" >
+
+        <RadioButton
+            android:id="@+id/radioSine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="15sp"
-            android:paddingRight="15sp" >
+            android:text="Sine" />
 
-            <RadioButton
-                android:id="@+id/radioSine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sine" />
+        <RadioButton
+            android:id="@+id/radioTriangle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Triangle" />
 
-            <RadioButton
-                android:id="@+id/radioSquare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Square" />
-        </RadioGroup>
-    
+        <RadioButton
+            android:id="@+id/radioSawtooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sawtooth" />
+
+        <RadioButton
+            android:id="@+id/radioSquare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Square" />
+    </RadioGroup>
+
 </LinearLayout>
